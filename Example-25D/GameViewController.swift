@@ -18,7 +18,10 @@ class GameViewController: UIViewController {
         // let scene = GameScene(size: view.frame.size)
         
         // Load GameScene2 for a roatation example
-        let scene = GameScene2(size: view.frame.size)
+        // let scene = GameScene2(size: view.frame.size)
+        
+        // Load GameScene3 for a roatation example with touch
+        let scene = GameScene3(size: view.frame.size)
         
         // Configure the view.
         let skView = self.view as! SKView
