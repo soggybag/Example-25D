@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene2: SKScene {
     
     var sprites = [Sprite3D]()
     
@@ -16,24 +16,19 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        for i in 1...100 {
+        for i in 0 ..< 10 {
             let hue = CGFloat(arc4random() % 100) / 100
             let color = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 1)
             let size = CGSize(width: 40, height: 40)
             let sprite3d = Sprite3D(texture: nil, color: color, size: size)
             addChild(sprite3d)
             
-            // Sprites random spread
-            sprite3d.x = CGFloat(arc4random() % 350) - 175
-            sprite3d.y = CGFloat(arc4random() % 350) - 175
-            sprite3d.z = CGFloat(arc4random() % 10000)
             
-            /* 
-            // Sprites in a line to the horizon
-            sprite3d.x = 150
+            // Sprites in a circle
+            let inc = CGFloat(M_PI) * 2 / 10
+            sprite3d.x = sin(inc * CGFloat(i)) * 100
+            sprite3d.z = cos(inc * CGFloat(i)) * 100
             sprite3d.y = -150
-            sprite3d.z = CGFloat(i) * 50
-            */
  
             sprite3d.render()
             sprites.append(sprite3d)
@@ -52,10 +47,7 @@ class GameScene: SKScene {
         /* Called before each frame is rendered */
         
         for sprite in sprites {
-            sprite.z -= 5
-            if sprite.z < 0 {
-                sprite.z = 10000
-            }
+            sprite.rotate_3d(x: 0, y: 1, z: 0)
             sprite.render()
         }
     }

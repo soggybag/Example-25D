@@ -40,7 +40,7 @@ class Sprite3D: SKSpriteNode {
     }
     
     
-    func rotate_3d( x: CGFloat, y: CGFloat, z: CGFloat ) {
+    func rotate_3d(x x: CGFloat, y: CGFloat, z: CGFloat) {
         let aSin = sin(x * widget)
         let aCos = cos(x * widget)
         let bSin = sin(y * widget)

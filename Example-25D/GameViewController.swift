@@ -14,7 +14,12 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let scene = GameScene(size: view.frame.size)
+        // Load GameScene for an example of moving objects on the z
+        // let scene = GameScene(size: view.frame.size)
+        
+        // Load GameScene2 for a roatation example
+        let scene = GameScene2(size: view.frame.size)
+        
         // Configure the view.
         let skView = self.view as! SKView
         skView.showsFPS = true
