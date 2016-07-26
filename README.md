@@ -5,3 +5,5 @@ The system is built on the idea of setting the position, scale and zPosition of 
 
 Use the Sprite3D class as a substitute for any SKSpriteNode. Set the x, y, z properties to position the sprite in spac. 
 You must call sprite3d.render() to draw the sprite in its "3d".
+
+![screenshot](screenshot.png)
